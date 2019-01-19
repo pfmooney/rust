@@ -130,6 +130,7 @@ static TARGETS: &[&str] = &[
     "x86_64-apple-ios",
     "x86_64-fortanix-unknown-sgx",
     "x86_64-fuchsia",
+    "x86_64-illumos",
     "x86_64-linux-android",
     "x86_64-pc-windows-gnu",
     "x86_64-pc-windows-msvc",
