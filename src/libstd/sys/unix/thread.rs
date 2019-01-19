@@ -154,7 +154,14 @@ impl Thread {
     pub fn set_name(_name: &CStr) {
         // FIXME: determine whether Fuchsia has a way to set a thread name.
     }
-
+    #[cfg(target_os = "illumos")]
+    pub fn set_name(_name: &CStr) {
+        unsafe {
+            // TODO: _name must be truncated to PTHREAD_MAX_NAMELEN_NP (32) characters
+            // or this will fail.
+            libc::pthread_setname_np(libc::pthread_self(), cname.as_ptr());
+        }
+    }
     pub fn sleep(dur: Duration) {
         let mut secs = dur.as_secs();
         let mut nsecs = dur.subsec_nanos() as _;
