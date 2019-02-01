@@ -8,7 +8,7 @@ pub fn opts() -> TargetOptions {
         has_rpath: true,
         target_family: Some("unix".to_string()),
         is_like_solaris: true,
-	eliminate_frame_pointers: false,
+	eliminate_frame_pointer: false,
 
         .. Default::default()
     }

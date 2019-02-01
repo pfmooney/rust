@@ -5,6 +5,8 @@ pub fn target() -> TargetResult {
     base.pre_link_args.insert(LinkerFlavor::Gcc, vec!["-m64".to_string()]);
     base.cpu = "x86-64".to_string();
     base.max_atomic_width = Some(64);
+    // illumos has its own stack protection which interferes
+    // with the rust stack probes.  See rust-lang/rust#52577
     base.stack_probes = false;
 
     Ok(Target {
