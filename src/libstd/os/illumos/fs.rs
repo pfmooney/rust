@@ -6,7 +6,7 @@ use fs::Metadata;
 use sys_common::AsInner;
 
 #[allow(deprecated)]
-use os::solaris::raw;
+use os::illumos::raw;
 
 /// OS-specific extensions to [`fs::Metadata`].
 ///
