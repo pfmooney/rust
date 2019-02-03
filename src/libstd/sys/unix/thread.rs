@@ -159,7 +159,7 @@ impl Thread {
         unsafe {
             // TODO: _name must be truncated to PTHREAD_MAX_NAMELEN_NP (32) characters
             // or this will fail.
-            libc::pthread_setname_np(libc::pthread_self(), cname.as_ptr());
+            libc::pthread_setname_np(libc::pthread_self(), _name.as_ptr());
         }
     }
     pub fn sleep(dur: Duration) {
