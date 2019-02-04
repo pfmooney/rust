@@ -10,8 +10,8 @@ pub fn target() -> TargetResult {
     base.stack_probes = false;
 
     Ok(Target {
-	// LLVM does not currently have a separate illumos target,
-	// so we still pass Solaris to it
+        // LLVM does not currently have a separate illumos target,
+        // so we still pass Solaris to it
         llvm_target: "x86_64-pc-solaris".to_string(),
         target_endian: "little".to_string(),
         target_pointer_width: "64".to_string(),
