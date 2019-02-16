@@ -2,7 +2,8 @@ use spec::{LinkerFlavor, Target, TargetResult};
 
 pub fn target() -> TargetResult {
     let mut base = super::illumos_base::opts();
-    base.pre_link_args.insert(LinkerFlavor::Gcc, vec!["-m64".to_string()]);
+    base.pre_link_args.insert(LinkerFlavor::Gcc,
+        vec!["-m64".to_string(), "-std=c99".to_string()]);
     base.cpu = "x86-64".to_string();
     base.max_atomic_width = Some(64);
     // illumos has its own stack protection which interferes

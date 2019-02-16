@@ -145,22 +145,19 @@ impl Thread {
         target_os = "haiku",
         target_os = "l4re",
         target_os = "emscripten",
-        target_os = "redox"
+        target_os = "redox",
+        target_os = "solaris",
+        target_os = "illumos"
     ))]
     pub fn set_name(_name: &CStr) {
-        // Newlib, Illumos, Haiku, and Emscripten have no way to set a thread name.
+        // Newlib, Haiku, and Emscripten have no way to set a thread name.
+        // Newer versions of Solaris an illumos have pthread_setname_np, but
+        // there's currently no easy way to discover at compile-time if
+        // those features are present.
     }
     #[cfg(target_os = "fuchsia")]
     pub fn set_name(_name: &CStr) {
         // FIXME: determine whether Fuchsia has a way to set a thread name.
-    }
-    #[cfg(target_os = "illumos")]
-    pub fn set_name(_name: &CStr) {
-        unsafe {
-            // TODO: _name must be truncated to PTHREAD_MAX_NAMELEN_NP (32) characters
-            // or this will fail.
-            libc::pthread_setname_np(libc::pthread_self(), _name.as_ptr());
-        }
     }
     pub fn sleep(dur: Duration) {
         let mut secs = dur.as_secs();
