@@ -2,11 +2,11 @@
 
 use libc;
 
-use fs::Metadata;
-use sys_common::AsInner;
+use crate::fs::Metadata;
+use crate::sys_common::AsInner;
 
 #[allow(deprecated)]
-use os::illumos::raw;
+use crate::os::illumos::raw;
 
 /// OS-specific extensions to [`fs::Metadata`].
 ///
