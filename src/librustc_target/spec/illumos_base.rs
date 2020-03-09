@@ -8,6 +8,7 @@ pub fn opts() -> TargetOptions {
         has_rpath: true,
         target_family: Some("unix".to_string()),
         is_like_solaris: true,
+        limit_rdylib_exports: false, // Linker doesn't support this
         eliminate_frame_pointer: false,
 
         // While we support ELF TLS, rust requires a way to register
