@@ -21,7 +21,7 @@ pub fn target() -> TargetResult {
         arch: "x86_64".to_string(),
         target_os: "illumos".to_string(),
         target_env: String::new(),
-        target_vendor: String::new(),
+        target_vendor: "unknown".to_string(),
         linker_flavor: LinkerFlavor::Gcc,
         options: base,
     })
