@@ -152,8 +152,8 @@ mod imp {
         target_os = "freebsd",
         target_os = "netbsd",
         target_os = "openbsd",
-        target_os = "solaris"
-        target_os = "illumos",
+        target_os = "solaris",
+        target_os = "illumos"
     ))]
     unsafe fn get_stack() -> libc::stack_t {
         libc::stack_t { ss_sp: get_stackp(), ss_flags: 0, ss_size: SIGSTKSZ }
