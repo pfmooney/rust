@@ -28,6 +28,10 @@ RUN apt-get update && \
 
 RUN mkdir /ws/build/gcc && \
     cd /ws/build/gcc && \
+    export CFLAGS="-fPIC" && \
+    export CXXFLAGS="-fPIC" && \
+    export CXXFLAGS_FOR_TARGET="-fPIC" && \
+    export CFLAGS_FOR_TARGET="-fPIC" && \
     /ws/src/gcc/gcc-${GCCV}/configure \
         --target=x86_64-sun-solaris2.10 \
         --with-sysroot=/ws/sysroot \
