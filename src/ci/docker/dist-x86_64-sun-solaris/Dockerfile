@@ -51,7 +51,6 @@ RUN mkdir /ws/build/gcc && \
     && make -j16 \
     && make install
 
-
 #COPY scripts/sccache.sh /scripts/
 #RUN sh /scripts/sccache.sh
 
@@ -60,9 +59,7 @@ ENV \
     CC_x86_64_sun_solaris=x86_64-sun-solaris2.10-gcc \
     CXX_x86_64_sun_solaris=x86_64-sun-solaris2.10-g++
 
-ENV TARGETS=x86_64-sun-solaris
-#ENV HOSTS=x86_64-sun-solaris
+ENV HOSTS=x86_64-sun-solaris
 
 ENV RUST_CONFIGURE_ARGS --enable-extended --disable-docs
-#ENV SCRIPT python2.7 ../x.py dist --host $HOSTS --target $HOSTS
-ENV SCRIPT python2.7 ../x.py dist --target $TARGETS
+ENV SCRIPT python2.7 ../x.py dist --host $HOSTS --target $HOSTS
