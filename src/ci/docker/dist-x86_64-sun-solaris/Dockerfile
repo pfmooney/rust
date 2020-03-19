@@ -6,50 +6,18 @@ RUN sed -i 's/^# deb-src/deb-src/' /etc/apt/sources.list
 COPY scripts/cross-apt-packages.sh /tmp/
 RUN bash /tmp/cross-apt-packages.sh
 
-#RUN apt-get update && \
-#  apt-get build-dep -y clang llvm
-
-COPY scripts/illumos-toolchain.sh /tmp/
-
-RUN bash /tmp/illumos-toolchain.sh sysroot
-RUN bash /tmp/illumos-toolchain.sh binutils
-#RUN bash /tmp/illumos-toolchain-2.sh gcc
-
-ENV GCCV=7.5.0
-RUN mkdir /ws/src/gcc && \
-    cd /ws/src/gcc && \
-    curl -L https://ftp.gnu.org/gnu/gcc/gcc-$GCCV/gcc-$GCCV.tar.xz | tar xJf -
-
+# Regquired for cross-build gcc
 RUN apt-get update && \
   apt-get install -y --no-install-recommends \
     libgmp-dev \
     libmpfr-dev \
     libmpc-dev
 
-RUN mkdir /ws/build/gcc && \
-    cd /ws/build/gcc && \
-    export CFLAGS="-fPIC" && \
-    export CXXFLAGS="-fPIC" && \
-    export CXXFLAGS_FOR_TARGET="-fPIC" && \
-    export CFLAGS_FOR_TARGET="-fPIC" && \
-    /ws/src/gcc/gcc-${GCCV}/configure \
-        --target=x86_64-sun-solaris2.10 \
-        --with-sysroot=/ws/sysroot \
-        --with-gnu-as \
-        --with-gnu-ld \
-        --disable-nls \
-        --disable-libgomp \
-        --disable-libquadmath \
-        --disable-libssp \
-        --disable-libvtv \
-        --disable-libcilkrts \
-        --disable-libada \
-        --disable-libsanitizer \
-        --disable-libquadmath-support \
-        --disable-shared \
-        --enable-tls \
-    && make -j16 \
-    && make install
+COPY scripts/illumos-toolchain.sh /tmp/
+
+RUN bash /tmp/illumos-toolchain.sh sysroot
+RUN bash /tmp/illumos-toolchain.sh binutils
+RUN bash /tmp/illumos-toolchain.sh gcc
 
 #COPY scripts/sccache.sh /scripts/
 #RUN sh /scripts/sccache.sh
