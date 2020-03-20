@@ -6,7 +6,7 @@ RUN sed -i 's/^# deb-src/deb-src/' /etc/apt/sources.list
 COPY scripts/cross-apt-packages.sh /tmp/
 RUN bash /tmp/cross-apt-packages.sh
 
-# Regquired for cross-build gcc
+# Required for cross-build gcc
 RUN apt-get update && \
   apt-get install -y --no-install-recommends \
     libgmp-dev \
