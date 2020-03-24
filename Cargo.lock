@@ -1065,8 +1065,7 @@ checksum = "e88a8acf291dafb59c2d96e8f59828f3838bb1a70398823ade51a84de6a6deed"
 [[package]]
 name = "filetime"
 version = "0.2.8"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1ff6d4dab0aa0c8e6346d46052e93b13a16cf847b54ed357087c35011048cc7d"
+source = "git+https://github.com/pfmooney/filetime.git?branch=illumos-target#109514b163c0de422c1b5e4fa24aeff696afcb18"
 dependencies = [
  "cfg-if",
  "libc",
@@ -1129,8 +1128,7 @@ dependencies = [
 [[package]]
 name = "fs2"
 version = "0.4.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9564fc758e15025b46aa6643b1b77d047d1a56a1aea6e01002ac0c7026876213"
+source = "git+https://github.com/pfmooney/fs2-rs.git?branch=illumos-target#95394c836550cc4a65819d6e11f3ef889332b9e2"
 dependencies = [
  "libc",
  "winapi 0.3.8",
@@ -1777,9 +1775,8 @@ checksum = "b294d6fa9ee409a054354afc4352b0b9ef7ca222c69b8812cbea9e7d2bf3783f"
 
 [[package]]
 name = "libc"
-version = "0.2.66"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d515b1f41455adea1313a4a2ac8a8a477634fbae63cc6100e3aebb207ce61558"
+version = "0.2.68"
+source = "git+https://github.com/pfmooney/libc.git?branch=solarish-fallocate#b0c0d3ce5234a86453719473f5fee0b2cdfa0e75"
 dependencies = [
  "rustc-std-workspace-core",
 ]
@@ -1787,8 +1784,6 @@ dependencies = [
 [[package]]
 name = "libgit2-sys"
 version = "0.12.0+0.99.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "05dff41ac39e7b653f5f1550886cf00ba52f8e7f57210b633cdeedb3de5b236c"
 dependencies = [
  "cc",
  "libc",
@@ -2273,8 +2268,6 @@ checksum = "77af24da69f9d9341038eba93a073b1fdaaa1b788221b00a69bce9e762cb32de"
 [[package]]
 name = "openssl-src"
 version = "111.7.0+1.1.1e"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6fde5a8c01ef8aa31ff8d0aaf9bae248581ed8840fca0b66e51cc9f294a8cb2c"
 dependencies = [
  "cc",
 ]
@@ -4566,8 +4559,7 @@ checksum = "4ecf3b85f68e8abaa7555aa5abdb1153079387e60b718283d732f03897fcfc86"
 [[package]]
 name = "socket2"
 version = "0.3.11"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e8b74de517221a2cb01a53349cf54182acdc31a074727d3079068448c0676d85"
+source = "git+https://github.com/pfmooney/socket2-rs.git?branch=illumos-target#34b112eb0a51dc4b7c846cf27f2bb1f6350de2f7"
 dependencies = [
  "cfg-if",
  "libc",

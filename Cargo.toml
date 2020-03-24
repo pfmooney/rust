@@ -55,6 +55,16 @@ cargo = { path = "src/tools/cargo" }
 # `rustfmt` executable are the same exact version).
 rustfmt-nightly = { path = "src/tools/rustfmt" }
 
+# Temporary cargo fixes
+libc = { git = "https://github.com/pfmooney/libc.git", branch = "solarish-fallocate" }
+fs2 = { git = "https://github.com/pfmooney/fs2-rs.git", branch = "illumos-target" }
+socket2 = { git = "https://github.com/pfmooney/socket2-rs.git", branch = "illumos-target" }
+filetime = { git = "https://github.com/pfmooney/filetime.git", branch = "illumos-target" }
+#git2 = { git = "https://github.com/pfmooney/git2-rs.git", branch = "illumos-target" }
+libgit2-sys = { path = "git2-rs/libgit2-sys" }
+#openssl-src = { git = "https://github.com/pfmooney/openssl-src-rs", branch = "illumos-target" }
+openssl-src = { path = "openssl-src" }
+
 # See comments in `src/tools/rustc-workspace-hack/README.md` for what's going on
 # here
 rustc-workspace-hack = { path = 'src/tools/rustc-workspace-hack' }
