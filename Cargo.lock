@@ -1065,7 +1065,7 @@ checksum = "e88a8acf291dafb59c2d96e8f59828f3838bb1a70398823ade51a84de6a6deed"
 [[package]]
 name = "filetime"
 version = "0.2.8"
-source = "git+https://github.com/pfmooney/filetime.git?branch=illumos-target#109514b163c0de422c1b5e4fa24aeff696afcb18"
+source = "git+https://github.com/alexcrichton/filetime.git?rev=937aa81f320078ba76021ec112df2e01671f58d8#937aa81f320078ba76021ec112df2e01671f58d8"
 dependencies = [
  "cfg-if",
  "libc",
@@ -1128,7 +1128,7 @@ dependencies = [
 [[package]]
 name = "fs2"
 version = "0.4.3"
-source = "git+https://github.com/pfmooney/fs2-rs.git?branch=illumos-target#95394c836550cc4a65819d6e11f3ef889332b9e2"
+source = "git+https://github.com/pfmooney/fs2-rs.git?branch=illumos-target#c6daa1e0a6bd46dab09049072768eaf31d654638"
 dependencies = [
  "libc",
  "winapi 0.3.8",
@@ -1776,7 +1776,8 @@ checksum = "b294d6fa9ee409a054354afc4352b0b9ef7ca222c69b8812cbea9e7d2bf3783f"
 [[package]]
 name = "libc"
 version = "0.2.68"
-source = "git+https://github.com/pfmooney/libc.git?branch=solarish-fallocate#b0c0d3ce5234a86453719473f5fee0b2cdfa0e75"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "dea0c0405123bba743ee3f91f49b1c7cfb684eef0da0a50110f758ccf24cdff0"
 dependencies = [
  "rustc-std-workspace-core",
 ]
@@ -4559,7 +4560,7 @@ checksum = "4ecf3b85f68e8abaa7555aa5abdb1153079387e60b718283d732f03897fcfc86"
 [[package]]
 name = "socket2"
 version = "0.3.11"
-source = "git+https://github.com/pfmooney/socket2-rs.git?branch=illumos-target#34b112eb0a51dc4b7c846cf27f2bb1f6350de2f7"
+source = "git+https://github.com/alexcrichton/socket2-rs.git?rev=230d413459911812bb9647b697b681217aae008d#230d413459911812bb9647b697b681217aae008d"
 dependencies = [
  "cfg-if",
  "libc",

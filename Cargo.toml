@@ -56,10 +56,9 @@ cargo = { path = "src/tools/cargo" }
 rustfmt-nightly = { path = "src/tools/rustfmt" }
 
 # Temporary cargo fixes
-libc = { git = "https://github.com/pfmooney/libc.git", branch = "solarish-fallocate" }
 fs2 = { git = "https://github.com/pfmooney/fs2-rs.git", branch = "illumos-target" }
-socket2 = { git = "https://github.com/pfmooney/socket2-rs.git", branch = "illumos-target" }
-filetime = { git = "https://github.com/pfmooney/filetime.git", branch = "illumos-target" }
+socket2 = { git = "https://github.com/alexcrichton/socket2-rs.git", rev = "230d413459911812bb9647b697b681217aae008d" }
+filetime = { git = "https://github.com/alexcrichton/filetime.git", rev = "937aa81f320078ba76021ec112df2e01671f58d8" }
 #git2 = { git = "https://github.com/pfmooney/git2-rs.git", branch = "illumos-target" }
 libgit2-sys = { path = "git2-rs/libgit2-sys" }
 #openssl-src = { git = "https://github.com/pfmooney/openssl-src-rs", branch = "illumos-target" }
