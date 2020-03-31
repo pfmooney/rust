@@ -299,7 +299,7 @@ dependencies = [
  "env_logger 0.7.1",
  "filetime",
  "flate2",
- "fs2",
+ "fs3",
  "fwdansi",
  "git2",
  "git2-curl",
@@ -1126,9 +1126,10 @@ dependencies = [
 ]
 
 [[package]]
-name = "fs2"
-version = "0.4.3"
-source = "git+https://github.com/pfmooney/fs2-rs.git?branch=illumos-target#c6daa1e0a6bd46dab09049072768eaf31d654638"
+name = "fs3"
+version = "0.4.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e1414bd2d0abf7a529ec14e262441fb58b436fb4eac619b151086a338e3f2514"
 dependencies = [
  "libc",
  "winapi 0.3.8",

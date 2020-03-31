@@ -56,7 +56,7 @@ cargo = { path = "src/tools/cargo" }
 rustfmt-nightly = { path = "src/tools/rustfmt" }
 
 # Temporary cargo fixes
-fs2 = { git = "https://github.com/pfmooney/fs2-rs.git", branch = "illumos-target" }
+#fs3 = { git = "https://github.com/oxidecomputer/fs3-rs.git", branch = "master" }
 socket2 = { git = "https://github.com/alexcrichton/socket2-rs.git", rev = "230d413459911812bb9647b697b681217aae008d" }
 filetime = { git = "https://github.com/alexcrichton/filetime.git", rev = "937aa81f320078ba76021ec112df2e01671f58d8" }
 #git2 = { git = "https://github.com/pfmooney/git2-rs.git", branch = "illumos-target" }
