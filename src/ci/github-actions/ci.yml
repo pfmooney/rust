@@ -334,6 +334,8 @@ jobs:
           - dist-x86_64-msvc-alt
           - dist-x86_64-musl
           - dist-x86_64-netbsd
+          - dist-x86_64-freebsd
+          - dist-x86_64-sun-solaris
           - i686-gnu
           - i686-gnu-nopt
           - i686-mingw-1
@@ -439,6 +441,9 @@ jobs:
             <<: *job-linux-xl
 
           - name: dist-x86_64-netbsd
+            <<: *job-linux-xl
+
+          - name: dist-x86_64-sun-solaris
             <<: *job-linux-xl
 
           - name: i686-gnu

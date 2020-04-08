@@ -45,6 +45,7 @@ static HOSTS: &[&str] = &[
     "x86_64-unknown-linux-gnu",
     "x86_64-unknown-linux-musl",
     "x86_64-unknown-netbsd",
+    "x86_64-sun-solaris",
 ];
 
 static TARGETS: &[&str] = &[
