@@ -54,6 +54,7 @@ cargo = { path = "src/tools/cargo" }
 # that we're shipping as well (to ensure that the rustfmt in RLS and the
 # `rustfmt` executable are the same exact version).
 rustfmt-nightly = { path = "src/tools/rustfmt" }
+libc = { git = "https://github.com/pfmooney/libc.git", branch = "illumos-target" }
 
 # See comments in `src/tools/rustc-workspace-hack/README.md` for what's going on
 # here
