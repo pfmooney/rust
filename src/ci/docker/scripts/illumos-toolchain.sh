@@ -8,7 +8,7 @@ JOBS="$(getconf _NPROCESSORS_ONLN)"
 
 case "$1" in
 x86_64)
-	SYSROOT_MACH='amd64'
+	SYSROOT_MACH='i386'
 	;;
 *)
 	printf 'ERROR: unknown architecture: %s\n' "$1"
@@ -31,10 +31,10 @@ GCC_BASE="gcc-$GCC_VERSION"
 GCC_TAR="gcc-$GCC_VERSION.tar.xz"
 GCC_URL="https://ftp.gnu.org/gnu/gcc/$GCC_BASE/$GCC_TAR"
 
-SYSROOT_VER="$SYSROOT_MACH-20200312-161829"
-SYSROOT_MD5='d61f8d2e10cc12b97ccd8b92b80493a2'
-SYSROOT_TAR="sysroot-illumos-$SYSROOT_VER.tar.gz"
-SYSROOT_URL="https://illumos.org/downloads/$SYSROOT_TAR"
+SYSROOT_VER="20181213-de6af22ae73b-v1"
+SYSROOT_MD5='23462f7f5297f390803d27c424c32ad6'
+SYSROOT_TAR="illumos-sysroot-$SYSROOT_MACH-$SYSROOT_VER.tar.gz"
+SYSROOT_URL="https://github.com/illumos/sysroot/releases/download/$SYSROOT_VER/$SYSROOT_TAR"
 SYSROOT_DIR='/ws/sysroot'
 
 BINUTILS_VERSION='2.25.1'
